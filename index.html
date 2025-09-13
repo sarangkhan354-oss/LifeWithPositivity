@@ -1,333 +1,176 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Life With Positivity</title>
-  <meta name="description" content="Life With Positivity — daily quotes, challenges, mood tracker, and inspiration in English & Urdu."/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Website</title>
   <style>
-    :root{
-      --bg:#f6f7fb; --card:#fff; --muted:#6b7280; --accent:#6c63ff;
-      --glass: rgba(255,255,255,0.6);
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #2c3e50;
+      line-height: 1.6;
     }
-    [data-theme="dark"]{
-      --bg:#0b1020; --card:#0f1724; --muted:#9aa3b2; --accent:#8b5cf6; --glass: rgba(255,255,255,0.03);
-    }
-    *{box-sizing:border-box}
 
-body{
-  margin:0;
-  font-family:Inter,ui-sans-serif;
-  background:linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  color:#0f1724;
-}
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#00b4d8);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
-    nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
-    main{max-width:1100px;margin:28px auto;padding:18px}
-    .grid{display:grid;grid-template-columns:1fr 380px;gap:20px}
-    .card{background:var(--card);border-radius:16px;padding:18px;box-shadow:0 6px 24px rgba(15,23,36,0.06);backdrop-filter: blur(6px)}
-    .hero{display:flex;flex-direction:column;gap:12px;padding:28px}
-    .hero h1{margin:0;font-size:28px}
-    .hero p{margin:0;color:var(--muted)}
-    .cta-row{display:flex;gap:12px;margin-top:8px}
-    button.btn{border:0;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;background:var(--accent);color:white}
-    .muted{color:var(--muted);font-size:14px}
-    /* Quote area */
-    .quote-area{display:flex;flex-direction:column;gap:12px}
-    blockquote{margin:0;padding:16px;border-radius:12px;background:linear-gradient(180deg,var(--glass),transparent);font-style:italic}
-    .quote-meta{display:flex;justify-content:space-between;align-items:center}
-    .small-btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:10px;cursor:pointer}
-    /* Mood tracker */
-    .mood-grid{display:flex;gap:8px;justify-content:space-between}
-    .mood-option{flex:1;padding:12px;border-radius:10px;text-align:center;cursor:pointer;border:1px dashed rgba(0,0,0,0.06)}
-    footer{max-width:1100px;margin:28px auto;padding:18px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
-    .socials a{margin-left:10px;text-decoration:none;color:var(--muted);font-weight:700}
-    /* Responsive */
-    @media (max-width:900px){
-      .grid{grid-template-columns:1fr; padding-bottom:12px}
-      header, main, footer{padding:12px}
+    header {
+      background: #3498db;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    /* Natural Beauty Images */
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .images img {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 400px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    /* Quotes */
+    blockquote {
+      font-size: 20px;
+      font-style: italic;
+      color: #555;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    #newQuoteBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #newQuoteBtn:hover {
+      background: #2980b9;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #f1c40f;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <div class="brand">
-      <div class="logo">LP</div>
-      <div>
-        <div style="font-weight:800">Life With Positivity</div>
-        <div class="muted" style="font-size:13px">Daily inspiration • Urdu & English</div>
-      </div>
-    </div>
-    <nav>
-      <a href="#quote">Quotes</a>
-      <a href="#mood">Mood</a>
-      <a href="#join">Join</a>
-      <button id="themeToggle" class="small-btn">Dark</button>
-    </nav>
+    <h1>🌟 Welcome to My First Website 🌟</h1>
+    <p>Daily Quotes & Natural Beauty</p>
   </header>
 
-  <main>
-    <div class="grid">
-      <section>
-        <div class="card hero">
-          <h1>Har din ek nayi umeed — small steps, big change.</h1>
-          <p class="muted">Rozana quotes, streaks, mood tracker, aur challenges — taake aapka din behtar guzre.</p>
-          <div class="cta-row">
-            <button id="quoteBtn" class="btn">Get Today's Quote</button>
-            <button id="randomBtn" class="small-btn">Surprise me</button>
-            <a href="#join" class="small-btn" style="text-decoration:none">Join Newsletter</a>
-          </div>
-        </div>.  
-        
-        <!-- Daily Quote -->
-        <div id="quote" class="card" style="margin-top:16px">
-          <div class="quote-area">
-            <div class="quote-meta">
-              <strong>Daily Quote</strong>
-              <div class="muted" id="quoteDate">—</div>
-            </div>
-            <blockquote id="quoteText">Loading quote...</blockquote>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
-              <div>
-                <button id="copyQuote" class="small-btn">Copy</button>
-                <button id="shareWhats" class="small-btn">Share WhatsApp</button>
-                <button id="shareFB" class="small-btn">Share Facebook</button>
-              </div>
-              <div class="muted">Language:
-                <select id="langSel">
-                  <option value="en">English</option>
-                  <option value="ur">Urdu</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Daily Streak -->
-        <div id="streak" class="card" style="margin-top:16px">
-          <strong>Your Daily Positivity Streak</strong>
-          <p id="streakText" class="muted">Loading...</p>
-        </div>
-
-        <!-- Daily Challenge -->
-        <div id="challenge" class="card" style="margin-top:16px">
-          <strong>Today's Challenge</strong>
-          <p id="challengeText" class="muted">Loading...</p>
-        </div>
-
-        <!-- Mood Tracker -->
-        <div id="mood" class="card" style="margin-top:16px">
-          <strong>Quick Mood Tracker</strong>
-          <p class="muted">Select your mood and get a positivity tip (saved locally).</p>
-          <div class="mood-grid" style="margin-top:10px">
-            <div class="mood-option" data-value="1">😔 1</div>
-            <div class="mood-option" data-value="2">😕 2</div>
-            <div class="mood-option" data-value="3">😐 3</div>
-            <div class="mood-option" data-value="4">🙂 4</div>
-            <div class="mood-option" data-value="5">😀 5</div>
-          </div>
-          <div style="margin-top:12px" id="moodTip" class="muted">You haven't logged a mood today.</div>
-        </div>
-      </section>
-
-      <aside>
-        <div class="card" id="join">
-          <strong>Subscribe for daily positivity</strong>
-          <p class="muted">Get short inspirational messages straight to your inbox.</p>
-          <form id="subscribeForm" action="mailto:sarangkhan354@gmail.com" method="post" enctype="text/plain" style="display:flex;flex-direction:column;gap:8px">
-            <input id="email" type="email" placeholder="sarangkhan354@gmail.com" required style="padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"/>
-            <button type="submit" class="btn">Subscribe</button>
-            <div class="muted" style="font-size:13px">Tip: Replace the form 'action' with Formspree or other provider for real signup.</div>
-          </form>
-        </div>
-
-        <div class="card" style="margin-top:14px;text-align:center">
-          <strong>Follow us</strong>
-          <div style="margin-top:10px" class="socials">
-            <a target="_blank" href="https://www.facebook.com/share/164DjEVaku/">Facebook</a>
-            <a target="_blank" href="https://www.instagram.com/ziidiii__121?igsh=eWhkcTIzNGFmYnph">Instagram</a>
-            <a target="_blank" href="https://wa.me/?text=Check%20out%20Life%20With%20Positivity%20-%20inspire%20your%20day!">WhatsApp</a>
-          </div>
-        </div>
-      </aside>
+  <!-- Natural Beauty Section -->
+  <section style="background:#f9f9f9;">
+    <h2>🌸 Natural Beauty (New Every Day)</h2>
+    <div class="images">
+      <img src="https://source.unsplash.com/400x250/?nature" alt="Nature">
+      <img src="https://source.unsplash.com/400x250/?mountain" alt="Mountain">
+      <img src="https://source.unsplash.com/400x250/?sunset" alt="Sunset">
     </div>
-  </main> 
-<!-- 🌿 Natural Beauty Section -->
-<section style="text-align:center; padding: 40px; background:#f9f9f9;">
-  <h2 style="font-size:28px; margin-bottom:20px; color:#2c3e50;">🌸 Natural Beauty</h2>
-  
-  <!-- Images Row -->
-  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-    <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=400&q=80" style="border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2);" width="400" height="250">
-    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=400&q=80" style="border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2);" width="400" height="250">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" style="border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2);" width="400" height="250">
-  </div>
-</section>
+  </section>
 
-<!-- 💬 Quotes Section -->
-<section style="text-align:center; padding:40px; background:#eef6f9;">
-  <h2 style="font-size:28px; margin-bottom:20px; color:#2c3e50;">💬 Daily Quotes</h2>
-  
-  <blockquote style="font-size:20px; font-style:italic; color:#555; margin:20px auto; max-width:600px;">
-    "Look deep into nature, and then you will understand everything better." – Albert Einstein
-  </blockquote>
-  
-  <blockquote style="font-size:20px; font-style:italic; color:#555; margin:20px auto; max-width:600px;">
-    "The best view comes after the hardest climb."
-  </blockquote>
-  
-  <blockquote style="font-size:20px; font-style:italic; color:#555; margin:20px auto; max-width:600px;">
-    "Every sunset brings the promise of a new dawn."
-  </blockquote>
-</section>
-  
+  <!-- Daily Quotes Section -->
+  <section style="background:#eef6f9;">
+    <h2>💬 Daily Quotes</h2>
+    <div id="quotes-area"></div>
+    <button id="newQuoteBtn">Next Quote</button>
+  </section>
 
+  <!-- Footer -->
   <footer>
-    <div class="muted">© <span id="year"></span> Life With Positivity</div>
-    <div class="muted">Built with ♥ — <a href="mailto: sarangkhan354@gmail.com" style="text-decoration:none;color:inherit">Contact</a></div>
+    <p>© 2025 My First Website | Made with ❤️</p>
+    <p>
+      Follow me: 
+      <a href="https://www.facebook.com/share/164DjEVaku/" target="_blank">Facebook</a> | 
+      <a href="https://www.instagram.com/ziidiii__121?igsh=eWhkcTIzNGFmYnph" target="_blank">Instagram</a>
+    </p>
   </footer>
 
+  <!-- JavaScript for Random Quotes -->
   <script>
-    // --- Basic data ---
     const quotes = [
-      {en: "The only limit to our realization of tomorrow is our doubts of today.", ur: "کل کی کامیابی کی ایک رکاوٹ آج کے شکوک ہیں۔"},
-      {en: "Stay positive. Work hard. Make it happen.", ur: "مثبت رہو۔ محنت کرو۔ کامیابی حاصل کرو۔"},
-      {en: "Small steps every day lead to big changes.", ur: "روزانہ چھوٹے قدم بڑے تبدیلی کا باعث بنتے ہیں۔"},
-      {en: "Gratitude turns what we have into enough.", ur: "شکریہ وہ چیز ہے جو موجود ہے اسے کافی بنا دیتا ہے۔"},
-      {en: "You are capable of amazing things.", ur: "آپ حیرت انگیز کام کرنے کے قابل ہیں۔"}
+      "Look deep into nature, and then you will understand everything better. – Albert Einstein",
+      "The best view comes after the hardest climb.",
+      "Every sunset brings the promise of a new dawn.",
+      "Happiness is not something ready made. It comes from your own actions. – Dalai Lama",
+      "Do what you can, with what you have, where you are. – Theodore Roosevelt",
+      "In the middle of every difficulty lies opportunity. – Albert Einstein",
+      "Act as if what you do makes a difference. It does. – William James",
+      "Success is not final, failure is not fatal: it is the courage to continue that counts. – Winston Churchill",
+      "Believe you can and you're halfway there. – Theodore Roosevelt",
+      "Don’t count the days, make the days count. – Muhammad Ali"
     ];
 
-    // year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const container = document.getElementById("quotes-area");
+    const button = document.getElementById("newQuoteBtn");
 
-    // theme toggle
-    const tbtn = document.getElementById('themeToggle');
-    function applyTheme(t){
-      if(t==='dark'){ document.documentElement.setAttribute('data-theme','dark'); tbtn.textContent = 'Light' }
-      else { document.documentElement.removeAttribute('data-theme'); tbtn.textContent = 'Dark' }
-      localStorage.setItem('lwptheme', t);
-    }
-    tbtn.addEventListener('click', ()=>{
-      const cur = localStorage.getItem('lwptheme') === 'dark' ? 'light' : 'dark';
-      applyTheme(cur);
-    });
-    applyTheme(localStorage.getItem('lwptheme') || 'light');
-
-    // quote logic
-    function getDailyIndex(){
-      const d = new Date(); const key = d.toISOString().slice(0,10);
-      let stored = JSON.parse(localStorage.getItem('lwp_daily')) || {};
-      if(stored.date === key && typeof stored.index === 'number') return stored.index;
-      const idx = Math.floor(Math.random()*quotes.length);
-      stored = {date:key,index:idx}; localStorage.setItem('lwp_daily', JSON.stringify(stored));
-      return idx;
-    }
-    const quoteText = document.getElementById('quoteText');
-    const quoteDate = document.getElementById('quoteDate');
-    const langSel = document.getElementById('langSel');
-    function renderQuote(idx, lang='en'){
-      const q = quotes[idx];
-      quoteText.textContent = (lang==='en') ? q.en : q.ur;
-      quoteDate.textContent = new Date().toLocaleDateString();
-    }
-    const dailyIdx = getDailyIndex();
-    renderQuote(dailyIdx, 'en');
-    document.getElementById('quoteBtn').addEventListener('click', ()=> renderQuote(dailyIdx, langSel.value));
-    document.getElementById('randomBtn').addEventListener('click', ()=>{
-      const idx = Math.floor(Math.random()*quotes.length);
-      renderQuote(idx, langSel.value);
-    });
-    langSel.addEventListener('change', ()=> renderQuote(getDailyIndex(), langSel.value));
-    document.getElementById('copyQuote').addEventListener('click', async ()=>{
-      try{await navigator.clipboard.writeText(quoteText.textContent);alert('Quote copied!')}catch(e){alert('Copy failed.')}
-    });
-    document.getElementById('shareWhats').addEventListener('click', ()=>{
-      const text = encodeURIComponent(quoteText.textContent + " — Life With Positivity");
-      window.open('https://wa.me/?text=' + text, '_blank');
-    });
-    document.getElementById('shareFB').addEventListener('click', ()=>{
-      const url = encodeURIComponent(location.href);
-      const quote = encodeURIComponent(quoteText.textContent);
-      window.open('https://www.facebook.com/sharer/sharer.php?u='+url+'&quote='+quote, '_blank');
-    });
-
-    // Mood tracker
-    const options = document.querySelectorAll('.mood-option');
-    const moodTip = document.getElementById('moodTip');
-    function tipFor(v){
-      return {
-        1:"Aaj mushkil lag raha hai — paani piyen, walk karein, aur kisi se baat karein.",
-        2:"Thoda behtar — saans ki exercise karein ya gaane sunein.",
-        3:"Theek hai — ek chhota kaam complete karein.",
-        4:"Achha lag raha hai — kisi ko encourage karein.",
-        5:"Bahut achha! Chhota celebration karein — apni progress likh lein."
-      }[v] || "Keep going.";
-    }
-    function loadMood(){
-      const d = new Date().toISOString().slice(0,10);
-      const stored = JSON.parse(localStorage.getItem('lwp_mood')||'{}');
-      if(stored.date === d){
-        moodTip.textContent = "Today's mood: " + stored.value + " — " + tipFor(stored.value);
-      } else {
-        moodTip.textContent = "You haven't logged a mood today.";
+    function showRandomQuotes() {
+      container.innerHTML = "";
+      let selected = [];
+      while (selected.length < 3) {
+        let q = quotes[Math.floor(Math.random() * quotes.length)];
+        if (!selected.includes(q)) {
+          selected.push(q);
+        }
       }
-    }
-    options.forEach(opt=>{
-      opt.addEventListener('click', ()=>{
-        const v = opt.dataset.value;
-        const d = new Date().toISOString().slice(0,10);
-        localStorage.setItem('lwp_mood', JSON.stringify({date:d,value:v}));
-        loadMood();
+      selected.forEach(q => {
+        let block = document.createElement("blockquote");
+        block.textContent = q;
+        container.appendChild(block);
       });
-    });
-    loadMood();
-
-    // Streak
-    function updateStreak(){
-      const today = new Date().toISOString().slice(0,10);
-      let data = JSON.parse(localStorage.getItem("lwp_streak")||"{}");
-      if(!data.lastDate){
-        data = {count:1,lastDate:today};
-      } else {
-        const last = new Date(data.lastDate);
-        const diff = (new Date(today)-last)/(1000*60*60*24);
-        if(diff===1){data.count+=1;data.lastDate=today}
-        else if(diff>1){data.count=1;data.lastDate=today}
-      }
-      localStorage.setItem("lwp_streak", JSON.stringify(data));
-      document.getElementById("streakText").textContent = 
-        `🔥 You are on a ${data.count}-day positivity streak! Keep it up.`;
     }
-    updateStreak();
 
-    // Challenge
-    const challenges = [
-      "Write down 3 things you are grateful for.",
-      "Send a kind message to someone.",
-      "Take a 10-minute mindful walk.",
-      "Do a deep-breathing exercise for 2 minutes.",
-      "Read one positive article or story.",
-      "Help someone today in a small way.",
-      "Reflect on one thing you did well this week."
-    ];
-    function getDailyChallenge(){
-      const today = new Date().toISOString().slice(0,10);
-      let store = JSON.parse(localStorage.getItem("lwp_challenge")||"{}");
-      if(store.date !== today){
-        const idx = Math.floor(Math.random()*challenges.length);
-        store = {date:today, text:challenges[idx]};
-        localStorage.setItem("lwp_challenge", JSON.stringify(store));
-      }
-      document.getElementById("challengeText").textContent = store.text;
-    }
-    getDailyChallenge();
+    // First load
+    showRandomQuotes();
 
-    // newsletter
-    document.getElementById('subscribeForm').addEventListener('submit', (e)=>{
-      alert('Thank you! Replace form action with Formspree or email provider for real signup.');
-    });
+    // On button click -> new quotes
+    button.addEventListener("click", showRandomQuotes);
   </script>
 </body>
 </html>
