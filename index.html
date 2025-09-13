@@ -1,58 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Life With Positivity</title>
   <meta name="description" content="Life With Positivity — daily quotes, challenges, mood tracker, and inspiration in English & Urdu."/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#f6f7fb; --card:#fff; --muted:#6b7280; --accent:#6c63ff;
-      --glass: rgba(255,255,255,0.6);
+    :root {
+      --bg: #f6f7fb;
+      --card: rgba(255, 255, 255, 0.7);
+      --muted: #6b7280;
+      --accent: #6c63ff;
+      --shadow: 0 8px 32px rgba(0,0,0,0.1);
     }
-    [data-theme="dark"]{
-      --bg:#0b1020; --card:#0f1724; --muted:#9aa3b2; --accent:#8b5cf6; --glass: rgba(255,255,255,0.03);
+    [data-theme="dark"] {
+      --bg: #0b1020;
+      --card: rgba(15, 23, 36, 0.6);
+      --muted: #9aa3b2;
+      --accent: #8b5cf6;
+      --shadow: 0 8px 32px rgba(0,0,0,0.4);
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,var(--bg),#eaeefb);color:#0f1724;transition:background .25s,color .25s}
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#00b4d8);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
-    nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
-    main{max-width:1100px;margin:28px auto;padding:18px}
-    .grid{display:grid;grid-template-columns:1fr 380px;gap:20px}
-    .card{background:var(--card);border-radius:16px;padding:18px;box-shadow:0 6px 24px rgba(15,23,36,0.06);backdrop-filter: blur(6px)}
-    .hero{
-      display:flex;flex-direction:column;gap:12px;padding:28px;
-      background:url('https://source.unsplash.com/1200x400/?nature,sky,motivation') center/cover no-repeat;
-      color:white;
-      border-radius:16px;
-      min-height:220px;
-      justify-content:center;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg) no-repeat center center fixed;
+      background-size: cover;
+      color: #0f1724;
+      transition: background 0.5s, color 0.25s;
     }
-    .hero h1{margin:0;font-size:28px;text-shadow:0 2px 6px rgba(0,0,0,0.4)}
-    .hero p{margin:0;color:#f1f5f9;text-shadow:0 1px 4px rgba(0,0,0,0.4)}
-    .cta-row{display:flex;gap:12px;margin-top:8px}
-    button.btn{border:0;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;background:var(--accent);color:white}
-    .muted{color:var(--muted);font-size:14px}
-    /* Quote area */
-    .quote-area{display:flex;flex-direction:column;gap:12px}
-    blockquote{margin:0;padding:16px;border-radius:12px;background:linear-gradient(180deg,var(--glass),transparent);font-style:italic}
-    .quote-meta{display:flex;justify-content:space-between;align-items:center}
-    .small-btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:10px;cursor:pointer}
-    .quote-img{
-      width:100%;border-radius:12px;margin-top:10px;
-      max-height:220px;object-fit:cover;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    /* Mood tracker */
-    .mood-grid{display:flex;gap:8px;justify-content:space-between}
-    .mood-option{flex:1;padding:12px;border-radius:10px;text-align:center;cursor:pointer;border:1px dashed rgba(0,0,0,0.06)}
-    footer{max-width:1100px;margin:28px auto;padding:18px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
-    .socials a{margin-left:10px;text-decoration:none;color:var(--muted);font-weight:700}
-    /* Responsive */
-    @media (max-width:900px){
-      .grid{grid-template-columns:1fr; padding-bottom:12px}
-      header, main, footer{padding:12px}
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .logo {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #00b4d8);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 18px;
+      box-shadow: var(--shadow);
+    }
+    nav a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+    main { max-width: 1200px; margin: 28px auto; padding: 18px; }
+    .grid { display: grid; grid-template-columns: 1fr 360px; gap: 24px; }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      transition: 0.3s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .hero h1 { margin: 0; font-size: 28px; }
+    .hero p { margin: 0; color: var(--muted); }
+    .cta-row { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+    button.btn {
+      border: 0; padding: 10px 16px; border-radius: 10px;
+      font-weight: 700; cursor: pointer;
+      background: var(--accent); color: white;
+      transition: 0.3s;
+    }
+    button.btn:hover { opacity: 0.9; transform: scale(1.05); }
+    .small-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 8px 14px; border-radius: 10px;
+      cursor: pointer; color: inherit;
+      transition: 0.3s;
+    }
+    .small-btn:hover { background: rgba(255,255,255,0.2); }
+    blockquote {
+      margin: 0; padding: 16px; border-radius: 12px;
+      background: rgba(255,255,255,0.2);
+      font-style: italic; line-height: 1.6;
+    }
+    .quote-meta { display: flex; justify-content: space-between; align-items: center; }
+    .mood-grid { display: flex; gap: 8px; justify-content: space-between; }
+    .mood-option {
+      flex: 1; padding: 12px; border-radius: 10px;
+      text-align: center; cursor: pointer;
+      border: 1px dashed rgba(255,255,255,0.3);
+      transition: 0.3s;
+    }
+    .mood-option:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); }
+    footer {
+      max-width: 1200px; margin: 28px auto; padding: 18px;
+      color: var(--muted); display: flex; justify-content: space-between;
+      align-items: center;
+    }
+    .socials a { margin-left: 10px; text-decoration: none; color: var(--muted); font-weight: 700; transition: 0.3s; }
+    .socials a:hover { color: var(--accent); }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      header, main, footer { padding: 12px; }
     }
   </style>
 </head>
@@ -76,7 +131,6 @@
   <main>
     <div class="grid">
       <section>
-        <!-- Hero Section -->
         <div class="card hero">
           <h1>Har din ek nayi umeed — small steps, big change.</h1>
           <p class="muted">Rozana quotes, streaks, mood tracker, aur challenges — taake aapka din behtar guzre.</p>
@@ -95,12 +149,11 @@
               <div class="muted" id="quoteDate">—</div>
             </div>
             <blockquote id="quoteText">Loading quote...</blockquote>
-            <img id="quoteImg" class="quote-img" src="https://source.unsplash.com/600x300/?motivation,positive" alt="Motivational Image"/>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;flex-wrap:wrap;gap:8px">
               <div>
                 <button id="copyQuote" class="small-btn">Copy</button>
-                <button id="shareWhats" class="small-btn">Share WhatsApp</button>
-                <button id="shareFB" class="small-btn">Share Facebook</button>
+                <button id="shareWhats" class="small-btn">WhatsApp</button>
+                <button id="shareFB" class="small-btn">Facebook</button>
               </div>
               <div class="muted">Language:
                 <select id="langSel">
@@ -112,13 +165,13 @@
           </div>
         </div>
 
-        <!-- Daily Streak -->
+        <!-- Streak -->
         <div id="streak" class="card" style="margin-top:16px">
           <strong>Your Daily Positivity Streak</strong>
           <p id="streakText" class="muted">Loading...</p>
         </div>
 
-        <!-- Daily Challenge -->
+        <!-- Challenge -->
         <div id="challenge" class="card" style="margin-top:16px">
           <strong>Today's Challenge</strong>
           <p id="challengeText" class="muted">Loading...</p>
@@ -129,11 +182,11 @@
           <strong>Quick Mood Tracker</strong>
           <p class="muted">Select your mood and get a positivity tip (saved locally).</p>
           <div class="mood-grid" style="margin-top:10px">
-            <div class="mood-option" data-value="1">😔 1</div>
-            <div class="mood-option" data-value="2">😕 2</div>
-            <div class="mood-option" data-value="3">😐 3</div>
-            <div class="mood-option" data-value="4">🙂 4</div>
-            <div class="mood-option" data-value="5">😀 5</div>
+            <div class="mood-option" data-value="1">😔</div>
+            <div class="mood-option" data-value="2">😕</div>
+            <div class="mood-option" data-value="3">😐</div>
+            <div class="mood-option" data-value="4">🙂</div>
+            <div class="mood-option" data-value="5">😀</div>
           </div>
           <div style="margin-top:12px" id="moodTip" class="muted">You haven't logged a mood today.</div>
         </div>
@@ -143,8 +196,8 @@
         <div class="card" id="join">
           <strong>Subscribe for daily positivity</strong>
           <p class="muted">Get short inspirational messages straight to your inbox.</p>
-          <form id="subscribeForm" action="mailto: sarangkhan354@gmail.com" method="post" enctype="text/plain" style="display:flex;flex-direction:column;gap:8px">
-            <input id="email" type="email" placeholder="sarangkhan354@gmail.com" required style="padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"/>
+          <form id="subscribeForm" action="mailto:your-email@example.com" method="post" enctype="text/plain" style="display:flex;flex-direction:column;gap:8px">
+            <input id="email" type="email" placeholder="Your email" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.3)"/>
             <button type="submit" class="btn">Subscribe</button>
             <div class="muted" style="font-size:13px">Tip: Replace the form 'action' with Formspree or other provider for real signup.</div>
           </form>
@@ -164,32 +217,23 @@
 
   <footer>
     <div class="muted">© <span id="year"></span> Life With Positivity</div>
-    <div class="muted">Built with ♥ — <a href="mailto:sarangkhan354@gmail.com" style="text-decoration:none;color:inherit">Contact</a></div>
+    <div class="muted">Built with ♥ — <a href="mailto:your-email@example.com" style="text-decoration:none;color:inherit">Contact</a></div>
   </footer>
 
   <script>
-    // --- Quotes ---
-    const quotes = [
-      {en: "The only limit to our realization of tomorrow is our doubts of today.", ur: "کل کی کامیابی کی ایک رکاوٹ آج کے شکوک ہیں۔"},
-      {en: "Stay positive. Work hard. Make it happen.", ur: "مثبت رہو۔ محنت کرو۔ کامیابی حاصل کرو۔"},
-      {en: "Small steps every day lead to big changes.", ur: "روزانہ چھوٹے قدم بڑے تبدیلی کا باعث بنتے ہیں۔"},
-      {en: "Gratitude turns what we have into enough.", ur: "شکریہ وہ چیز ہے جو موجود ہے اسے کافی بنا دیتا ہے۔"},
-      {en: "You are capable of amazing things.", ur: "آپ حیرت انگیز کام کرنے کے قابل ہیں۔"}
-    ];
-    const quoteImages = [
-      "https://source.unsplash.com/600x300/?sunrise,hope",
-      "https://source.unsplash.com/600x300/?mountain,peace",
-      "https://source.unsplash.com/600x300/?sky,freedom",
-      "https://source.unsplash.com/600x300/?books,learning",
-      "https://source.unsplash.com/600x300/?flowers,happiness"
-    ];
+    // Background image auto-change
+    function setBackground() {
+      document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?nature,positive,vibes')";
+    }
+    setBackground();
+    setInterval(setBackground, 15000);
 
-    // year
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // theme toggle
+    // Theme toggle
     const tbtn = document.getElementById('themeToggle');
-    function applyTheme(t){
+    function applyTheme(t) {
       if(t==='dark'){ document.documentElement.setAttribute('data-theme','dark'); tbtn.textContent = 'Light' }
       else { document.documentElement.removeAttribute('data-theme'); tbtn.textContent = 'Dark' }
       localStorage.setItem('lwptheme', t);
@@ -200,7 +244,14 @@
     });
     applyTheme(localStorage.getItem('lwptheme') || 'light');
 
-    // quote logic
+    // Quotes
+    const quotes = [
+      {en: "The only limit to our realization of tomorrow is our doubts of today.", ur: "کل کی کامیابی کی ایک رکاوٹ آج کے شکوک ہیں۔"},
+      {en: "Stay positive. Work hard. Make it happen.", ur: "مثبت رہو۔ محنت کرو۔ کامیابی حاصل کرو۔"},
+      {en: "Small steps every day lead to big changes.", ur: "روزانہ چھوٹے قدم بڑے تبدیلی کا باعث بنتے ہیں۔"},
+      {en: "Gratitude turns what we have into enough.", ur: "شکریہ وہ چیز ہے جو موجود ہے اسے کافی بنا دیتا ہے۔"},
+      {en: "You are capable of amazing things.", ur: "آپ حیرت انگیز کام کرنے کے قابل ہیں۔"}
+    ];
     function getDailyIndex(){
       const d = new Date(); const key = d.toISOString().slice(0,10);
       let stored = JSON.parse(localStorage.getItem('lwp_daily')) || {};
@@ -211,13 +262,11 @@
     }
     const quoteText = document.getElementById('quoteText');
     const quoteDate = document.getElementById('quoteDate');
-    const quoteImg = document.getElementById('quoteImg');
     const langSel = document.getElementById('langSel');
     function renderQuote(idx, lang='en'){
       const q = quotes[idx];
       quoteText.textContent = (lang==='en') ? q.en : q.ur;
       quoteDate.textContent = new Date().toLocaleDateString();
-      quoteImg.src = quoteImages[idx % quoteImages.length];
     }
     const dailyIdx = getDailyIndex();
     renderQuote(dailyIdx, 'en');
@@ -289,18 +338,4 @@
     }
     updateStreak();
 
-    // Challenge
-    const challenges = [
-      "Write down 3 things you are grateful for.",
-      "Send a kind message to someone.",
-      "Take a 10-minute mindful walk.",
-      "Do a deep-breathing exercise for 2 minutes.",
-      "Read one positive article or story.",
-      "Help someone today in a small way.",
-      "Reflect on one thing you did well this week."
-    ];
-    function getDailyChallenge(){
-      const today = new Date().toISOString().slice(0,10);
-      let store = JSON.parse(localStorage.getItem("lwp_challenge")||"{}");
-      if(store.date !== today){
-        const idx = Math.floor(Math.random()*challenges.length
+    //
