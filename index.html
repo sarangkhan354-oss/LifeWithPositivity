@@ -8,16 +8,16 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #f0f8ff, #d6f5f5);
+      background: #ffffff;
       color: #2c3e50;
       line-height: 1.6;
+      text-align: center;
     }
 
     header {
       background: #3498db;
       color: white;
-      text-align: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
 
     header h1 {
@@ -29,14 +29,9 @@
       font-size: 18px;
     }
 
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
     h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
+      margin-top: 40px;
+      font-size: 26px;
       color: #2c3e50;
     }
 
@@ -46,13 +41,14 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
+      margin-top: 20px;
     }
 
     .images img {
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      width: 400px;
-      height: 250px;
+      width: 300px;
+      height: 200px;
       object-fit: cover;
     }
 
@@ -74,18 +70,11 @@
       border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
 
-    #newQuoteBtn:hover {
-      background: #2980b9;
-    }
-
-    /* Footer */
     footer {
       background: #2c3e50;
       color: white;
-      text-align: center;
       padding: 20px;
       margin-top: 40px;
     }
@@ -110,28 +99,24 @@
   </header>
 
   <!-- Natural Beauty Section -->
-  <section style="background:#f9f9f9;">
-    <h2>🌸 Natural Beauty</h2>
-    <div class="images">
-      <img src="https://source.unsplash.com/400x250/?nature" alt="Nature">
-      <img src="https://source.unsplash.com/400x250/?mountain" alt="Mountain">
-      <img src="https://source.unsplash.com/400x250/?forest" alt="Forest">
-    </div>
-  </section>
+  <h2>🌸 Natural Beauty</h2>
+  <div class="images">
+    <img src="https://source.unsplash.com/300x200/?nature" alt="Nature">
+    <img src="https://source.unsplash.com/300x200/?mountain" alt="Mountain">
+    <img src="https://source.unsplash.com/300x200/?forest" alt="Forest">
+  </div>
 
   <!-- Daily Quotes Section -->
-  <section style="background:#eef6f9;">
-    <h2>💬 Daily Quotes</h2>
-    <div id="quotes-area"></div>
-    <button id="newQuoteBtn">Next Quote</button>
-  </section>
+  <h2>💬 Daily Quotes</h2>
+  <div id="quotes-area"></div>
+  <button id="newQuoteBtn">Next Quote</button>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 My First Website | Made with ❤️</p>
     <p>
-      Follow me: 
-      <a href="https://www.facebook.com/share/164DjEVaku/" target="_blank">Facebook</a> | 
+      Follow me:
+      <a href="https://www.facebook.com/share/164DjEVaku/" target="_blank">Facebook</a> |
       <a href="https://www.instagram.com/ziidiii__121?igsh=eWhkcTIzNGFmYnph" target="_blank">Instagram</a>
     </p>
   </footer>
